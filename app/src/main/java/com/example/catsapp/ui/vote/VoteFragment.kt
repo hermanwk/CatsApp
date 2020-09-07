@@ -91,6 +91,10 @@ class VoteFragment : Fragment() {
                         try {
                             Handler(Looper.getMainLooper()).post {
                                 Picasso.get().load(image.url).into(favourite_image_view)
+                                favourite_image_view.visibility = View.VISIBLE
+                                button_love.isEnabled = true
+                                button_nope.isEnabled = true
+                                button_favourite.isEnabled = true
                             }
                         } catch (e: Exception) {
                             Log.d("Exception", e.localizedMessage)
@@ -109,6 +113,14 @@ class VoteFragment : Fragment() {
             value = upVote
         )
 
+        // Disable buttons while the next image loads
+        Handler(Looper.getMainLooper()).post {
+            favourite_image_view.visibility = View.INVISIBLE
+            button_love.isEnabled = false
+            button_nope.isEnabled = false
+            button_favourite.isEnabled = false
+        }
+
         GlobalScope.launch {
             APIRepository().createVote(createVoteRequest = voteRequest)
                 .Success { response: VoteResponse ->
@@ -121,6 +133,10 @@ class VoteFragment : Fragment() {
     }
 
     fun onFavouriteClick() {
+        Handler(Looper.getMainLooper()).post {
+            button_favourite.isEnabled = false
+        }
+
         if (voteViewModel.favouriteId.isEmpty()) {
             val favouriteRequest = FavouriteRequest(
                 imageId = voteViewModel.currentImageID,
@@ -170,6 +186,10 @@ class VoteFragment : Fragment() {
         } else {
             button_favourite.text = voteViewModel.unfavIt
             button_favourite.setCompoundDrawablesWithIntrinsicBounds(0, R.drawable.ic_favorite_border_pink_24dp, 0, 0)
+        }
+
+        Handler(Looper.getMainLooper()).post {
+            button_favourite.isEnabled = true
         }
     }
 }
