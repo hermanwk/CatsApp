@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/navigation_vote"
+        android:enabled="true"
+        android:icon="@drawable/ic_thumbs_up_down_black_24dp"
+        android:title="@string/title_vote"
+        android:titleCondensed='"Vote"'
+        android:visible="true" />
+    <item
+        android:id="@+id/navigation_breeds"
+        android:enabled="true"
+        android:icon="@drawable/ic_apps_black_24dp"
+        android:title="@string/title_breeds"
+        android:titleCondensed='"Breeds"'
+        android:visible="true" />
+    <item
+        android:id="@+id/navigation_search"
+        android:enabled="true"
+        android:icon="@drawable/ic_search_black_24dp"
+        android:title="@string/title_search"
+        android:titleCondensed='"Images"'
+        android:visible="true" />
+    <item
+        android:id="@+id/navigation_favourites"
+        android:enabled="true"
+        android:icon="@drawable/ic_favorite_black_24dp"
+        android:title="@string/title_favourites"
+        android:titleCondensed='"Liked"'
+        android:visible="true" />
+    <item
+        android:id="@+id/navigation_upload"
+        android:enabled="true"
+        android:icon="@drawable/ic_file_upload_black_24dp"
+        android:title="@string/title_upload"
+        android:titleCondensed='"Upload"'
+        android:visible="true" />
+
+</menu>

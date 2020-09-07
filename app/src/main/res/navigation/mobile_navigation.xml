@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@id/navigation_vote">
+
+    <fragment
+        android:id="@+id/navigation_breeds"
+        android:name="com.example.catsapp.ui.breed.BreedFragment"
+        android:label="@string/title_breeds" />
+    <fragment
+        android:id="@+id/navigation_favourites"
+        android:name="com.example.catsapp.ui.favourites.FavouritesFragment"
+        android:label="@string/title_favourites" />
+    <fragment
+        android:id="@+id/navigation_search"
+        android:name="com.example.catsapp.ui.search.SearchFragment"
+        android:label="@string/title_search" />
+    <fragment
+        android:id="@+id/navigation_upload"
+        android:name="com.example.catsapp.ui.upload.UploadFragment"
+        android:label="@string/title_upload" />
+    <fragment
+        android:id="@+id/navigation_vote"
+        android:name="com.example.catsapp.ui.vote.VoteFragment"
+        android:label="@string/title_vote" />
+</navigation>
